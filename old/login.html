@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Virtual Tutor</title>
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+      <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
+	   <script src="my.js"></script>
+	 <style>
+	 input{margin-left: 10%;}
+	 </style>
+	
+</head>
+<body>
+    <script>
+        function onSuccess(data, status)
+        {
+            data = $.trim(data);
+            $("#notification").text(data);		
+			if(data == "success")
+			{
+			   window.location = "class.html";
+			}
+			else
+			{
+				$("#error").text("Login Failed. Please try again");
+			}
+        }
+  
+        function onError(data, status)
+        {
+            // handle an error
+			alert("hi");
+        }        
+  
+        $(document).ready(function() {
+            $("#submit").click(function(){
+  
+                var formData = $("#callAjaxForm").serialize();
+			
+			
+                $.ajax({
+                    type: "POST",
+                    url: "login.php",
+                    cache: false,
+                    data: formData,
+                    success: onSuccess,
+                    error: onError
+                });
+  
+                return false;
+            });
+        });
+    </script>
+  
+    <!-- call ajax page -->
+    <div data-role="page" id="callAjaxPage">
+        <div data-role="header">
+            <h1>VIRTUAL TUTOR</h1>
+        </div>
+  
+	<center><h3>Login</h3></center>
+  
+        <div data-role="content">
+            <form id="callAjaxForm">
+                <div data-role="fieldcontain">
+				<label>Username:</label>
+                    <input type="text" name="user" id="devname" value="username"  hidden="true"/>
+					<br style="clear:both;" />
+					<br>
+				<label>Password</label>
+					<input type="password" name="pass" id="pass"  hidden="true"/>
+					<br>
+					<br>
+					<button data-theme="b" id="submit" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+		
+		<div id="error"></div>
+  
+       
+    </div>
+</body>
+</html>

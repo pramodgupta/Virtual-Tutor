@@ -1,0 +1,120 @@
+/* 
+	File:			m-is.css
+	Developer:		Vishal Kurup (kurupv@umkc.edu) | IS Internal Applications 
+	Description:	This CSS file only contains a few of the styles needed to make 
+					the IS mobile site work. The other CSS file needed is the jQuery 
+					Mobile CSS file that is being linked to in each document
+*/
+
+
+/***********************************************************************************
+	Alerts
+***********************************************************************************/
+body {
+    background: url(images/dark.png) !important; 
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+.ui-content{
+	color: #DDD;
+	font-weight:normal;
+	text-shadow: 0 1px 1px #999;
+	
+}
+.ui-content h1, h2{
+	font-weight:normal;
+	/*text-shadow: 0 1px 1px #999;*/
+	letter-spacing:2px;
+}
+
+
+
+#univheader {
+background: #1e5799; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM2JSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #1e5799 0%, #207cca 36%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(36%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #1e5799 0%,#207cca 36%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #1e5799 0%,#207cca 36%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #1e5799 0%,#207cca 36%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom, #1e5799 0%,#207cca 36%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
+height: 52px;
+border:0;
+}
+
+#univfooter{
+	height: 45px;
+	padding-top: 10px;
+
+}
+
+
+#univfooter a{
+	color: #FFF;
+	text-decoration:none;
+}
+#logo{
+	height:36px;
+	position:absolute;
+	margin-left:10px;
+	margin-top:8px;
+}
+#homeButton{
+	position: absolute;
+	top: 7px;
+	right: 7px;
+
+}
+
+/* custom icons */
+.ui-icon-statusOpen{
+	background-image: url(/images/green.png);
+	background-color:#0C3;
+}
+.ui-icon-statusClosed {
+	background-image: url(/images/red.png);
+	background-color:#F00;
+}
+
+/*Outage Styles*/
+
+.outageitems{
+	font-weight: normal;	
+}
+.outagetime, .outagetext{
+	padding: 4px;	
+}
+.outagetime{
+	font-weight: bold;	
+}
+.outagetext{
+	line-height: 1.5;
+}
+
+/*Testing the List for IT Services Catalog*/
+
+#list-navigation {
+    color:#696969;
+    position:absolute;
+    right:2px;
+    top:0px;
+    z-index:200;
+	list-style-type:none;
+}​
+
+#backButton{
+	position: absolute;
+top: -2px;
+right: 4px;
+	
+}
+
+.ui-li-desc{
+	white-space:normal;
+}

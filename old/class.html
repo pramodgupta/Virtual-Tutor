@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Virtual Tutor</title>
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+      <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
+	   <script src="my.js"></script>
+</head>
+<body>
+    <script>
+        function onSuccess(data, status)
+        {
+            data = $.trim(data);
+            $("#error").text(data);	
+			var n=data.indexOf(",");
+		//alert(n);
+			var one = data.split(",");
+			var len = one.length;
+			var list = " ";
+			for (var i = 0; i < len-1; i++) {
+			//	list = list+"<li><a href='#'>"+one[i]+"</a></li>";
+			 $("#x ul").append('<li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-top ui-corner-bottom ui-btn-up-c"><div class="ui-btn-inner ui-li ui-corner-top ui-corner-bottom"><div class="ui-btn-text"><a href="m-callcenter.cfm" class="ui-link-inherit">'+ one[i] +'</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>');
+				
+			}
+			
+			//$("lis").text("Abc");		
+			
+		  
+			
+        }
+  
+        function onError(data, status)
+        {
+            // handle an error
+			alert("hi");
+        }        
+  
+        $(document).ready(function() {
+                            						
+                $.ajax({
+                    type: "POST",
+                    url: "class.php",
+                    cache: false,
+                    data: "user_id=1",
+                    success: onSuccess,
+                    error: onError
+                });
+  
+                return false;
+            });
+        
+    </script>
+  
+    <!-- call ajax page -->
+    <div data-role="page" id="callAjaxPage">
+        <div data-role="header">
+            <h1>VIRTUAL TUTOR</h1>
+        </div>
+  
+      <center> <h2> Classes List</h2></center>
+		<div id="x">
+			<ul data-role="listview" data-inset="true">
+                	
+					</ul>
+		</div>
+       
+    </div>
+</body>
+</html>
